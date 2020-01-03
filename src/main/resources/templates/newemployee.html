@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html xmlns="http://www.thymeleaf.org/" lang="en">
+<style type="text/css">
+
+.form{
+    width: 30%;
+
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    grid-gap:1em ;
+
+}
+.field{
+    display: grid;
+    column: span 2;
+    grid-template-columns: 6em 1fr;
+    grid-gap:1em ;
+}
+
+
+
+</style>
+<head>
+    <meta charset="UTF-8">
+    <title>New Employee</title>
+</head>
+<body>
+<h2>New Employee</h2>
+
+<form class="form" th:name="form" th:object="${employee}" th:action="@{/api/empgest/Employee}" method="post">
+
+    <label class="field">
+        <span class="text-label">Lastname</span>
+        <input type="text" th:field="*{lastname}" />
+    </label>
+
+    <label class="field">
+        <span class="text-label">Firstname</span>
+        <input type="text"  th:field="*{firstname}" />
+    </label>
+
+    <label class="field">
+        <span class="text-label">Birthdate</span>
+        <input type="text"  th:field="*{birthdate}" />
+    </label>
+
+
+        <input type="submit" value="Add">
+
+
+
+</form>
+</body>
+</html>
