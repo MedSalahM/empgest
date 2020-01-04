@@ -20,8 +20,7 @@ public class EmployeeDao implements EmployeeDaoImp {
     @Override
     public Employee getEmployeeById(int id) {
 
-        Employee employee = new Employee();
-       // employee=employeeRepositorie.findById(id).get();
+        Employee employee ;
         employee=employeeRepositorie.findById(id).orElseThrow(()->new EmployeeNF(id));
         return employee;
     }

@@ -38,6 +38,16 @@ public class ContractController {
 
     }
 
+    @GetMapping("/Contract/{id}")
+    public String ContractId(Model model ,@PathVariable int id)
+    {
+        Contract c;
+        c=contractDao.getContractId(id);
+        model.addAttribute("contracts",c);
+        return "contract.html";
+
+    }
+
     @PostMapping("/Contract")
     public String addContract(@ModelAttribute Contract contract){
 
@@ -49,9 +59,9 @@ public class ContractController {
     @GetMapping("/Contract/E/{empid}")
     public String ContractByEmpId(Model model, @PathVariable int empid)
     {
-        Contract contract = new Contract();
-        contract=contractDao.findContractByEmpId(empid);
-        model.addAttribute("contract",contract);
+        List<Contract> contract ;
+        contract=contractDao.ContractByEmpId(empid);
+        model.addAttribute("contracts",contract);
         return "contractbyemployee.html";
 
     }

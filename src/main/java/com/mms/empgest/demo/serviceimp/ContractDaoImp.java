@@ -10,11 +10,13 @@ public interface ContractDaoImp {
 
 
 
-    public Contract findContractByEmpId(int id);
+     List<Contract> ContractByEmpId(int id);
 
-    public Contract addContract(Contract contract);
+     Contract addContract(Contract contract);
 
-    public List<Contract> getContracts();
+     Contract getContractId(int id);
+
+     List<Contract> getContracts();
 
 
 

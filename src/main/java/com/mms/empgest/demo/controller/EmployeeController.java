@@ -1,6 +1,7 @@
 package com.mms.empgest.demo.controller;
 
 
+import com.mms.empgest.demo.service.ContractDao;
 import com.mms.empgest.demo.service.EmployeeDao;
 import com.mms.empgest.demo.domain.Employee;
 import org.springframework.stereotype.Controller;
@@ -17,9 +18,12 @@ public class EmployeeController {
     private EmployeeDao employeedao;
 
 
+
+
     public EmployeeController(EmployeeDao employeedao) {
         this.employeedao = employeedao;
     }
+
 
     @GetMapping
     public String Home(){
@@ -50,8 +54,14 @@ public class EmployeeController {
 
     @GetMapping("/Employee/{id}")
     public String EmployeesId(Model model , @PathVariable int id){
+
+
         Employee employees = employeedao.getEmployeeById(id);
         model.addAttribute("employees",employees);
+
+
+
+
         return "employee.html";
     }
 }
