@@ -1,7 +1,7 @@
 package com.mms.empgest.demo.controller;
 
 
-import com.mms.empgest.demo.dao.EmployeeDao;
+import com.mms.empgest.demo.service.EmployeeDao;
 import com.mms.empgest.demo.domain.Employee;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -10,13 +10,14 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @Controller
-@RequestMapping(HomeController.BASE_URL)
-public class HomeController {
+@RequestMapping(EmployeeController.BASE_URL)
+public class EmployeeController {
 
     public static final String BASE_URL="/api/empgest";
     private EmployeeDao employeedao;
 
-    public HomeController(EmployeeDao employeedao) {
+
+    public EmployeeController(EmployeeDao employeedao) {
         this.employeedao = employeedao;
     }
 
@@ -51,6 +52,6 @@ public class HomeController {
     public String EmployeesId(Model model , @PathVariable int id){
         Employee employees = employeedao.getEmployeeById(id);
         model.addAttribute("employees",employees);
-        return "employees.html";
+        return "employee.html";
     }
 }

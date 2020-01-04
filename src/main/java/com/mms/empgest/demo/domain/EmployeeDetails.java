@@ -28,8 +28,7 @@ public class EmployeeDetails {
     @OneToOne(mappedBy = "empdet")
     private Employee employee;
 
-    @OneToMany(mappedBy = "employeedetails")
-    private List<Contract> contract;
+
 
 
 

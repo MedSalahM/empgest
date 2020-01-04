@@ -27,7 +27,7 @@ public class Contract {
     private Department department;
 
     @OneToOne
-    private EmployeeDetails employeedetails;
+    private Employee employee;
 
 
 

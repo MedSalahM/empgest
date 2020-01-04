@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns="http://www.thymeleaf.org/" lang="en">
+<style type="text/css">
+
+    .form{
+        width: 30%;
+
+        display: grid;
+        grid-template-columns: max-content 1fr;
+        grid-gap:1em ;
+
+    }
+    .field{
+        display: grid;
+        column: span 2;
+        grid-template-columns: 6em 1fr;
+        grid-gap:1em ;
+    }
+
+
+
+</style>
+<head>
+    <meta charset="UTF-8">
+    <title>New Contract</title>
+</head>
+<body>
+<h2>New Contract</h2>
+
+<form class="form" th:name="form" th:object="${contract}" th:action="@{/api/empgest/Contract}" method="post">
+
+    <label class="field">
+        <span class="text-label">Employee Number</span>
+        <input type="text" th:field="*{employee.id}" />
+    </label>
+    <label class="field">
+        <span class="text-label">Start</span>
+        <input type="text" th:field="*{startdate}" />
+    </label>
+    <label class="field">
+        <span class="text-label">End</span>
+        <input type="text" th:field="*{enddate}" />
+    </label>
+
+
+    <input type="submit" value="Add">
+
+
+
+</form>
+</body>
+</html>

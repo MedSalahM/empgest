@@ -1,6 +1,6 @@
 package com.mms.empgest.demo.controller;
 
-import com.mms.empgest.demo.dao.OccupationDao;
+import com.mms.empgest.demo.service.OccupationDao;
 import com.mms.empgest.demo.domain.Occupation;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

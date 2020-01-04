@@ -1,9 +1,9 @@
-package com.mms.empgest.demo.dao;
+package com.mms.empgest.demo.service;
 
 import com.mms.empgest.demo.domain.Employee;
 import com.mms.empgest.demo.models.EmployeeNF;
 import com.mms.empgest.demo.repositories.EmployeeRepositorie;
-import com.mms.empgest.demo.services.EmployeeDaoImp;
+import com.mms.empgest.demo.serviceimp.EmployeeDaoImp;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
