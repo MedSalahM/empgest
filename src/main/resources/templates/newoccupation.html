@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xmlns="http://www.thymeleaf.org/" lang="en">
+<style type="text/css">
+
+.form{
+    width: 30%;
+
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    grid-gap:1em ;
+
+}
+.field{
+    display: grid;
+    column: span 2;
+    grid-template-columns: 6em 1fr;
+    grid-gap:1em ;
+}
+
+
+
+</style>
+<head>
+    <meta charset="UTF-8">
+    <title>New Employee</title>
+</head>
+<body>
+<h2>New Occupation</h2>
+
+<form class="form" th:name="form" th:object="${occupation}" th:action="@{/api/empgest/Occupation}" method="post">
+
+    <label class="field">
+        <span class="text-label">Code</span>
+        <input type="text" th:field="*{code}" />
+    </label>
+
+    <label class="field">
+        <span class="text-label">Label</span>
+        <input type="text"  th:field="*{label}" />
+    </label>
+
+
+
+
+        <input type="submit" value="Add">
+
+
+
+</form>
+</body>
+</html>
