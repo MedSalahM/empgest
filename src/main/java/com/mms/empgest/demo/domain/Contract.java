@@ -1,9 +1,12 @@
 package com.mms.empgest.demo.domain;
 
 
+import lombok.Data;
+
 import javax.persistence.*;
 
 @Entity
+@Data
 public class Contract {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

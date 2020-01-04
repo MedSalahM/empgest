@@ -5,10 +5,9 @@ import com.mms.empgest.demo.dao.EmployeeDao;
 import com.mms.empgest.demo.domain.Employee;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @Controller
 @RequestMapping(HomeController.BASE_URL)
@@ -41,5 +40,17 @@ public class HomeController {
         return "addemployee.html";
     }
 
+    @GetMapping("/Employees")
+    public String Employees(Model model){
+        List<Employee> employees = employeedao.getEmployees();
+        model.addAttribute("employees",employees);
+        return "employees.html";
+    }
 
+    @GetMapping("/Employee/{id}")
+    public String EmployeesId(Model model , @PathVariable int id){
+        Employee employees = employeedao.getEmployeeById(id);
+        model.addAttribute("employees",employees);
+        return "employees.html";
+    }
 }

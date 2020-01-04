@@ -1,9 +1,11 @@
 package com.mms.empgest.demo.domain;
 
 
+import lombok.Data;
+
 import javax.persistence.*;
 import java.util.List;
-
+@Data
 @Entity
 @Table(name = "employeedetails")
 public class EmployeeDetails {
