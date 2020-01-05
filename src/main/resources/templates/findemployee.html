@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns="http://www.thymeleaf.org/" lang="en">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form action="" class="form"  th:action="@{/api/empgest/findemployee}" method="post">
+
+
+    <label for="nom" class="lab">
+
+        <span class="label-text">Code Employee</span>
+        <input type="text"  th:name="employeeid" class="input">
+    </label>
+    <button class="submit">Trouver</button>
+</form>
+
+</body>
+</html>

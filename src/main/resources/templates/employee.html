@@ -15,6 +15,7 @@
             <th>Birthdate</th>
             <th>Adresse</th>
             <th>City</th>
+            <th>Contract</th>
         </tr>
         </thead>
         <tbody>
@@ -24,6 +25,8 @@
             <td><span th:text="${employee.birthdate}"> Birthdate </span></td>
             <td><span th:text="${employee.empdet.adresse}"> Adresse </span></td>
             <td><span th:text="${employee.empdet.city}"> City </span></td>
+            <td><a th:href="@{'/api/empgest/Contract/E/'+${employee.id}}">See contract</a></td>
+
         </tr>
         </tbody>
 

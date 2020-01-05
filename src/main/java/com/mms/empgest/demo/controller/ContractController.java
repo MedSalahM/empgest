@@ -28,6 +28,19 @@ public class ContractController {
         return "newcontract.html";
 
     }
+
+    @GetMapping("/Contract/new")
+    public String ContractNewPage(Model model)
+    {
+
+        return "findemployee.html";
+
+    }
+
+
+
+
+
     @GetMapping("/Contracts")
     public String Contracts(Model model)
     {

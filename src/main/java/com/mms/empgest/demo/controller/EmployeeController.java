@@ -59,9 +59,25 @@ public class EmployeeController {
         Employee employees = employeedao.getEmployeeById(id);
         model.addAttribute("employees",employees);
 
-
-
-
         return "employee.html";
     }
+
+
+    @GetMapping("Employee/find")
+    public String findEmployeePage()
+    {
+
+        return "findemployee";
+    }
+
+    @PostMapping("findemployee")
+    public String findEmployee(Model model, @RequestParam int employeeid)
+    {
+
+        Employee emp;
+        emp= employeedao.getEmployeeById(employeeid);
+        model.addAttribute("employees",emp);
+        return "empid.html";
+    }
 }
+

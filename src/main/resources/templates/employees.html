@@ -11,6 +11,7 @@
 <table>
         <thead>
         <tr>
+            <th>Code</th>
             <th>Name</th>
             <th>Birthdate</th>
             <th>Adresse</th>
@@ -20,6 +21,7 @@
         <tbody>
 
         <tr th:each="employee : ${employees}">
+            <td><span th:text="${employee.id}"> Birthdate </span></td>
             <td><span th:text="${employee.lastname+' '+employee.firstname}"> Name </span></td>
             <td><span th:text="${employee.birthdate}"> Birthdate </span></td>
             <td><span th:text="${employee.empdet.adresse}"> Adresse </span></td>
