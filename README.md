@@ -1,5 +1,5 @@
 # empgest
-Employee Manager Rest Api that have several endpoints
+Employee Management Rest Api that have several endpoints
 for creating , editing and deleting an employee .
 
 Built with Spring boot
